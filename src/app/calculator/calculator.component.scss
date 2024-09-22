@@ -1,41 +1,46 @@
-.display {
-    border: 1px solid lightgray;
-    width: 100px;
-    height: 20px;
-    text-align: right;
-    margin-bottom: 15px;
-}
+.calculator {
+    width: 300px;
+    border: solid 1px black;
 
-.num-buttons {
-    display: grid;
-    /* height: 300px; */
-    width: 100%;
-    justify-items: center;
-    grid-template-columns: 33px 33px 33px;
-    grid-template-rows: 30px 30px 30px 30px;
-    grid-template-areas:
-        ". . ."
-        ". . ."
-        ". . ."
-        ". center .";
-}
+    .display {
+        border: 1px solid lightgray;
+        max-width: 100%;
+        padding: 20px 0;
+        text-align: right;
+        margin-bottom: 15px;
+    }
 
-.button-0 {
-    grid-area: center
-}
+    .buttons-grid {
+        display: flex;
+        padding: 10px;
 
-.operator-buttons {
-    display: grid;
-    width: 100%;
-    justify-items: center;
-    grid-template-columns: 25px 25px 25px 25px;
-}
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            margin: 2px;
+        }
 
-.equals {
-    margin-top: 25px;
-    width: 100px;
-    height: 25px;
-    background-color: yellow;
-    color: black;
-    text-align: center;
+        .num-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            min-width: (100% / 12) * 8;
+
+            .equals {
+                min-width: calc(((100% / 3) - 2px) * 2);
+            }
+        }
+
+        .num-buttons .button {
+            width: calc(((100% / 12) - 1px) * 4);
+        }
+
+        .operator-buttons {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            min-width: calc(((100% / 12) - 1px) * 4);
+        }
+    }
 }
