@@ -1,28 +1,30 @@
 <div class="calculator">
     <h1>Calcolatrice</h1>
     
-    <div class="display">0</div>
+    <div class="previous-inputs">{{ previousInputs }}</div>
+    <div class="display">{{ display }}</div>
     
     <div class="buttons-grid">
         <div class="num-buttons">
-            <button class="button button-1">1</button>
-            <button class="button button-2">2</button>
-            <button class="button button-3">3</button>
-            <button class="button button-4">4</button>
-            <button class="button button-5">5</button>
-            <button class="button button-6">6</button>
-            <button class="button button-7">7</button>
-            <button class="button button-8">8</button>
-            <button class="button button-9">9</button>
-            <button class="button button-0">0</button>
-            <button class="button equals">=</button>
+            <button class="button button-1" (click)="displayValue($event.target)">1</button>
+            <button class="button button-2" (click)="displayValue($event.target)">2</button>
+            <button class="button button-3" (click)="displayValue($event.target)">3</button>
+            <button class="button button-4" (click)="displayValue($event.target)">4</button>
+            <button class="button button-5" (click)="displayValue($event.target)">5</button>
+            <button class="button button-6" (click)="displayValue($event.target)">6</button>
+            <button class="button button-7" (click)="displayValue($event.target)">7</button>
+            <button class="button button-8" (click)="displayValue($event.target)">8</button>
+            <button class="button button-9" (click)="displayValue($event.target)">9</button>
+            <button class="button button-0" (click)="displayValue($event.target)">0</button>
+            <button class="button equals" (click)="calculate()">=</button>
+            <button class="button button-0" (click)="clear()">C</button>
         </div>
         
         <div class="operator-buttons">
-            <button class="button button-m">x</button>
-            <button class="button button-d">/</button>
-            <button class="button button-a">+</button>
-            <button class="button button-s">-</button>
+            <button class="button button-m" (click)="applyOperator($event.target)">x</button>
+            <button class="button button-d" (click)="applyOperator($event.target)">/</button>
+            <button class="button button-a" (click)="applyOperator($event.target)">+</button>
+            <button class="button button-s" (click)="applyOperator($event.target)">-</button>
         </div>
     </div>
 </div>

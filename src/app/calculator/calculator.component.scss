@@ -2,11 +2,21 @@
     width: 300px;
     border: solid 1px black;
 
+    .previous-inputs {
+        max-width: 100%;
+        text-align: right;
+        margin-bottom: 5px;
+    }
+
     .display {
         border: 1px solid lightgray;
         max-width: 100%;
-        padding: 20px 0;
-        text-align: right;
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+
         margin-bottom: 15px;
     }
 
@@ -26,10 +36,6 @@
             display: flex;
             flex-wrap: wrap;
             min-width: (100% / 12) * 8;
-
-            .equals {
-                min-width: calc(((100% / 3) - 2px) * 2);
-            }
         }
 
         .num-buttons .button {
